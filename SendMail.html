@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script type="text/javascript">
+        function sendEmail1() {
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "sendmailjs7@gmail.com",
+                Password: "P@ssw0rdSM",
+                To: document.getElementById('txtMailTo1').value,
+                From: "sendmailjs7@gmail.com",
+                Subject: document.getElementById('txtMailSubject1').value,
+                Body: document.getElementById('txtMailBody1').value
+            })
+                .then(function (message) {
+                    alert(message)
+                });
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <table width="100%">
+        <tr>
+            <td width="50%">
+                <table>
+                    <tr>
+                        <td>Mail to</td>
+                        <td>:</td>
+                        <td><input id="txtMailTo1" type="text" style="width:250px" /></td>
+                    </tr>
+                    <tr>
+                        <td>Subject</td>
+                        <td>:</td>
+                        <td><input id="txtMailSubject1" type="text" style="width:250px" /></td>
+                    </tr>
+                    <tr>
+                        <td valign="top">Mail Body</td>
+                        <td valign="top">:</td>
+                        <td>
+                            <textarea id="txtMailBody1" rows="20" cols="20" style="width:550px"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <input id="btnSendMail1" type="button" value="SendMail" onclick="sendEmail1();" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
